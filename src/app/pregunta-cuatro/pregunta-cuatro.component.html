@@ -1,1 +1,33 @@
-<p>pregunta-cuatro works!</p>
+
+
+<div class="container">
+    <div class="content">
+        <form class="example-form">
+            <label for="">Ingresa Indicador</label>
+            <mat-form-field class="example-full-width">
+              <mat-label>Indicador </mat-label>
+              
+              <input type="text" matInput   [(ngModel)]="frmTasaAlcohol.indicador" name="indicador"
+                     placeholder="A">
+            </mat-form-field>
+        
+        
+            <label for="">Ingresa Tasa Alcohol</label>
+            <mat-form-field class="example-full-width">
+                <mat-label>Tasa</mat-label>
+                <input type="number" matInput  [(ngModel)]="frmTasaAlcohol.tasa" name="tasa"
+                       placeholder="0.2">
+              </mat-form-field>
+        
+              <button type="button" (click)="calcularTasa()" mat-flat-button>calcular</button>
+        
+              @if (mostrarResultado) {
+                <div>
+                    <h3>{{resultadofinal}}</h3>
+                </div>
+        
+              }
+        
+          </form>
+    </div>
+  </div>
