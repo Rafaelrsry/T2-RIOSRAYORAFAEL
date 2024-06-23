@@ -41,3 +41,14 @@
     width: 120px;
   }
   
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ajusta la altura según necesites */
+  }
+  
+  .content {
+    text-align: center; /* Alinea el contenido dentro del div */
+  }
