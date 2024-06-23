@@ -39,30 +39,29 @@ export class PreguntaTresComponent {
     
   }
   
-  calcularCostoMatricula():void {
-
-    let costoTotal = 520;
-    let descuento = 0;
+  calcularCostoMatricula(): void {
+    let costoPorMateria = 52; // Costo por cada materia
     let final = 0;
     let materias = Number(this.formMaterias.materias);
 
-    if(materias <=0){
-      this.resultadofinal = "No pueden ser 0 las materias"
+    if (materias <= 0) {
+        this.resultadofinal = "El número de materias debe ser mayor que 0";
+    } else {
+        final = materias * costoPorMateria;
+
+        // Aplicar descuento solo si hay más de 5 materias
+        if (materias > 5) {
+            let descuento = final * 0.1; // 10% de descuento
+            final -= descuento;
+        }
+
+        // Asegurar que el costo final no exceda el costo total de 520
+        final = Math.min(final, 520);
+
+        this.mostrarResultado = true;
+        this.resultadofinal = "Pago final: S/" + final.toFixed(2); // Formato de salida con dos decimales
     }
-
-    if(materias>5){
-       descuento = costoTotal * 0.1;
-      final =  costoTotal - descuento; 
-
-    }else {
-      final = costoTotal;
-    }
-
-    this.mostrarResultado = true;
-    this.resultadofinal = "Pago final" + final.toString();
-    
-
-  }
+}
 
 
 
