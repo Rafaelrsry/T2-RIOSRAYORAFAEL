@@ -1,0 +1,25 @@
+<form class="example-form">
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Salario</mat-label>
+      <input type="number" matInput   [(ngModel)]="formUtilidad.salario" name="salario"
+             placeholder="1000">
+    </mat-form-field>
+
+
+    <mat-form-field class="example-full-width">
+        <mat-label>Año</mat-label>
+        <input type="number" matInput  [(ngModel)]="formUtilidad.anios" name="anios"
+               placeholder="2">
+      </mat-form-field>
+
+      <button type="button" (click)="calcularUtilidad()" mat-flat-button>calcular</button>
+
+      @if (mostrarResultado) {
+        <div>
+            <h3>{{resultadofinal}}</h3>
+        </div>
+
+      }
+
+  </form>
