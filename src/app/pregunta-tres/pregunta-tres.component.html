@@ -1,1 +1,26 @@
-<p>pregunta-tres works!</p>
+<div class="container">
+    <div class="content">
+        <form class="example-form">
+            <label for="">Ingresas cuantas materias adquiriras</label>
+            <mat-form-field class="example-full-width">
+              <mat-label>Materias</mat-label>
+              
+              <input type="number" matInput   [(ngModel)]="formMaterias.materias" name="materias"
+                     placeholder="1">
+            </mat-form-field>
+        
+        
+           
+        
+              <button type="button" (click)="calcularCostoMatricula()" mat-flat-button>calcular</button>
+        
+              @if (mostrarResultado) {
+                <div>
+                    <h3>{{resultadofinal}}</h3>
+                </div>
+        
+              }
+        
+          </form>
+    </div>
+  </div>
